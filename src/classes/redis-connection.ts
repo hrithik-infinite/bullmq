@@ -1,11 +1,9 @@
 import { EventEmitter } from 'events';
 import { default as IORedis } from 'ioredis';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import { CONNECTION_CLOSED_ERROR_MSG } from 'ioredis/built/utils';
 import { ConnectionOptions, RedisOptions, RedisClient } from '../interfaces';
 import { IRedisClient } from '../interfaces/redis-client';
 import {
+  CONNECTION_CLOSED_ERROR_MSG,
   decreaseMaxListeners,
   increaseMaxListeners,
   isNotConnectionError,

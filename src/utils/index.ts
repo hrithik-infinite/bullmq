@@ -2,9 +2,6 @@ import { Cluster, Redis } from 'ioredis';
 import { AbortController } from '../classes/abort-controller';
 import { randomBytes, randomUUID as cryptoRandomUUID } from 'crypto';
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import { CONNECTION_CLOSED_ERROR_MSG } from 'ioredis/built/utils';
 import { ConnectionClosedError } from '../classes/errors/connection-closed-error';
 import {
   ChildMessage,
@@ -20,6 +17,8 @@ import * as semver from 'semver';
 
 import { SpanKind, TelemetryAttributes } from '../enums';
 import { DatabaseType } from '../types';
+
+export const CONNECTION_CLOSED_ERROR_MSG = 'Connection is closed.';
 
 export const errorObject: { [index: string]: any } = { value: null };
 
